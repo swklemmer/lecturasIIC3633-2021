@@ -1,1 +1,7 @@
+# Lectura 1: Collaborative Filtering Recommender Systems
 
+Este paper explica los conceptos claves del "Collaborative Filtering", sus usos principales, sus consideraciones de diseño y la forma en que se evalúan. Finalmente, presenta los problemas éticos relacionados a la privacidad de los usuarios y las preguntas que esto abre.
+
+La sección introductoria 9.1 no me parece apta para comenzar el paper. En primer lugar, presenta páginas y aplicaciones arcaicas que generan más preguntas que respuestas para un usuario que lee esto en 2021. Entiendo que intente mostrar el contexto histórico que dió inicio a CF, pero creo que llegar rápidamente a la explicación de los algortimos es más claro y más general que comenzar directamente con ejemplos de la vida real. En segundo lugar, no me parece que este primer capítulo respete la seriedad que una publicación científica merece. Esto se debe a que alterna entre información seria y ejemplos burdos, lo cual genera un sensación ambivalente sobre la dirección de la publicación: no se entiende si está apuntada a ingenieros o al público general.
+
+Por otra parte, la sección 9.2.3 sobre propiedades de los set de datos me parece mucho más "insightfull". Permite relacionar directamente las capacidades de CF son posbiles aplicaciones y le brinda al lector un criterio para preferir CF frente a otras alternativas. Este criterio se vuelve más claro aún cuando CF es comparado con XXX en la sección YYY.
