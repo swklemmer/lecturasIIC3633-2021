@@ -1,4 +1,4 @@
-# Evaluating Recommendation Systems
+# Evaluating Recommendation Systems
 
 Este paper entrega un repertorio de métodos para evaluar y comparar algoritmos recomendadores. Además, entrega directrices sobre cómo llevar a cabo estas evaluaciones con tal de extraer conclusiones correctas a partir de los resultados obtenidos. Los métodos de evaluación son divididos en tres clases: métodos *offline*, estudio de usuarios y métodos *online*. Vale la pena mencionar que esta publicación no es oficial, sino un borrador. En efecto, es cómun encontrar fórmulas no resueltas, *typos* u otros errores de formato.
 
