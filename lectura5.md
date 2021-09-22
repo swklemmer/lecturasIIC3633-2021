@@ -1,4 +1,4 @@
-# Combining Predictions for Accurate Recommender Systems
+# Combining Predictions for Accurate Recommender Systems
 
 La publicación analiza el uso de *ensemble learning* en algoritmos recomendadores. Estos métodos "combinan" varios algortimos de Filtrado Colaborativo en uno solo. La base de datos de prueba es la famosa *Netflix Prize Dataset*. Finalmente, los autores demuestran que combinar varios algortimos de CF resulta en un algoritmo más preciso que cada algortimo de CF por sí solo.
 
