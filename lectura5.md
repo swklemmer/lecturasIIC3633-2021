@@ -2,8 +2,6 @@
 
 La publicación analiza el uso de *ensemble learning* en algoritmos recomendadores. Estos métodos "combinan" varios algortimos de Filtrado Colaborativo en uno solo. La base de datos de prueba es la famosa *Netflix Prize Dataset*. Finalmente, los autores demuestran que combinar varios algortimos de CF resulta en un algoritmo más preciso que cada algortimo de CF por sí solo.
 
-Para combinar algoritmos, el método más fácil consiste en promediar los ratings predichos por cada uno. Una forma un poco más compleja, el *Linear Blending*, consiste en hacer una suma ponderada de aquellos, donde los pesos para el rating de cada algoritmo son entrenados. Sin embargo, el mejor desempeño se alcanza usando técnicas de combinación más sofisticadas como *A*, *B* o *C*.
-
 Luego de la introducción, los autores explican brevemente cada uno de los algoritmos de CF usados en el *Dataset*: *User-KNN*, *Item-KNN*, factorización matricial SVD, *Assymetric Factor Model* (AFM), SVD extendido, *Resctricted Boltzmann Machines* (RBM) y *Global Effects* (GE). Me parece un excelente resumen, ya que además de explicar el funcionamiento del algoritmo, explica sus requerimientos computacionales y desempeño en comparación al resto sin extenderse demasiado.
 
 En particular, los algoritmos no vistos en clase son explicados brevemente a continuación:
@@ -12,7 +10,7 @@ En particular, los algoritmos no vistos en clase son explicados brevemente a con
 - RBM: red neuronal de una capa de entrada y una capa oculta. Cada usuario recibe una probabilidad de consumir un cierto item.
 - GE: parecido a SVD, pero los factores latentes son "diseñados a mano".
 
-El concepto de residuales me parece sumamente interesante. Creo que corresponde explicar un poco mejor de dónde proviene. Si bien, se hace una referencia a la cita [20], no está demás explicitar de qué década son las ideas de entrenamiento residual.
+El concepto de residuales me parece sumamente interesante. Creo que corresponde explicar un poco mejor de dónde proviene. Si bien, se hace una referencia a la cita [20], no está demás explicitar de qué década son las ideas de entrenamiento residual. Aprovechando que es un paper corto, no creo que esta información sobraría.
 
 Se explica que cada algoritmo fue entrenado con un Set de Entrenamiento de incluía al subconjunto *pTrain* y *pTest*. Luego, la función de *Blending*, la cual se encarga de combinar las predicciones de cada algoritmo, se entrena usando exclusivamente *pTrain* y luego se evalúa usando *pTest*. Aquí surge la duda si hay alguna interacción entre los dos procesos de entrenamiento. También surge la duda si se está "haciendo trampa" al usar las muestras de *pTest* tanto en el entrenamiento de los algoritmos individuales como en la evaluación del *Blending*. Por ende, creo que en esta parte falta justificación.
 
@@ -24,7 +22,9 @@ Los métodos de *Blending* estudiados son,
 - *Kernel Ridge Regression Blending* (KRR): ajusta los pesos de cada algoritmo para minimizar una función de pérdida gausiana.
 - KNN Blending: dado un vector de predicciones, para encontrar la predicción resultante, encuentra a los k vectores de predicciones más cercanos del set de entrenamiento y genera el promedio sus predicciones reales.
 
-Para reportar el RMSE de cada Blend, el número de decimales no es constante, por lo que es un poco más confusa la comparación. Recomiendo siempre dejarlo constante.
+Para reportar el RMSE de cada Blend, el número de decimales no es siempre igual, por lo que es un poco más confusa la comparación. Recomiendo siempre dejarlo constante. Hubiera sido interesante que también se reportaran resultados sobre recomendación de rankings. Esto es porque una mejora en la *accuracy* no necesariamente sirve para saber si el algoritmo le dará mejores recomendaciones a los usuarios. Esto solo ocurre si la accuracy mejora lo suficiente como para que estas nuevas predicciones se traduzcan a *rankings* distintos. Por ende, mostrar cifras como mAP o nDCG hubiera entregado una nueva perspectiva.
+
+El mejor desempeño se alcanza usando técnicas de combinación más sofisticadas como *Bagging*, la cual combina los *Blends* obtenidos con Redes Neuronales, Regresiones polinomiales y GBDT. Lo increíble es que con esta técnica alcanzan una mejora aún mayor que la del grupo del segundo lugar del *Netlfix Price Competition*, quienes también usaban *Ensembles*. Este último dato ayuda a dimensionar las ventajas de la inclusión de todos los datos, de lo que hasta ahora no se tenía mucha noción. Es decir, el RMSE por sí solo no dice mucho, pero sirve para contrastar varios algortimos.
 
 
-Idea: ¿Usan nDCG? si no, accuracy no es suficiente para saber si la mejora ayudará a dar mejores recomendaciones, en la medida que estas nuevas predicciones se traduzcan a *rankings* distintos.
+
