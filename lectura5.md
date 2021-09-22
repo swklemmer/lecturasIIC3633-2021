@@ -10,7 +10,7 @@ En particular, los algoritmos no vistos en clase son explicados brevemente a con
 - RBM: red neuronal de una capa de entrada y una capa oculta. Cada usuario recibe una probabilidad de consumir un cierto item.
 - GE: parecido a SVD, pero los factores latentes son "diseñados a mano".
 
-El concepto de residuales me parece sumamente interesante. Creo que corresponde explicar un poco mejor de dónde proviene. Si bien, se hace una referencia a la cita [20], no está demás explicitar de qué década son las ideas de entrenamiento residual. Aprovechando que es un paper corto, no creo que esta información sobraría.
+Luego, los autores explican que ciertos algoritmos fueron entrenados sobre el dataset original, mientras que otros fueron entrenados sobre los "residuos". El concepto de residuales me parece sumamente interesante. Creo que corresponde explicar un poco mejor de dónde proviene. Si bien, se hace una referencia a la cita [20], no está demás explicitar de qué década son las ideas de entrenamiento residual. Aprovechando que es un paper corto, no creo que esta información sobraría.
 
 Se explica que cada algoritmo fue entrenado con un Set de Entrenamiento de incluía al subconjunto *pTrain* y *pTest*. Luego, la función de *Blending*, la cual se encarga de combinar las predicciones de cada algoritmo, se entrena usando exclusivamente *pTrain* y luego se evalúa usando *pTest*. Aquí surge la duda si hay alguna interacción entre los dos procesos de entrenamiento. También surge la duda si se está "haciendo trampa" al usar las muestras de *pTest* tanto en el entrenamiento de los algoritmos individuales como en la evaluación del *Blending*. Por ende, creo que en esta parte falta justificación.
 
