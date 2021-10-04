@@ -1,0 +1,7 @@
+# Interactive recommender systems: a survey of the state of the art and future research challenges and opportunities
+
+Esta publicación presenta una interfaz visual interactiva para sistemas recomendadores, la cual busca dotar a los sistemas recomendadores con virtudes que mejoran la experiencia del usuario, como transparencia, confianza y control, además de mitigar problemas como *Cold Start*.
+
+En su segunda sección, el árticulo comienza resumiendo los desafíos que atañen a los sistemas recomendadores: mitigación del *Cold Start* para el filtrado colaborativo, mejorar la explicabilidad de los fundamentos de cada recomendación y desarrollo de las vías para obtener información contextual del usuario. En la tercera sección, presenta una interfaz visual interactiva aplicable a todo sistema de recomendación y apuntada al uso del usuario final. Esta permite que el usuario visualice la información sobre su representación personal (por ejemplo, lista de recomendaciones que ha hecho), sus datos contextuales (ubicación, género, etc.), representación en el *medio* (por ejemplo, una región en el espacio latente) y/o sus recomendaciones. Además, permite que este usuario entregue *feedback* al sistema recomendador, lo que actualiza su visualización en tiempo real.
+
+En la cuarta sección, se presenta un análisis de sistemas recomendadores que ya han incorporado alguna interfaz interactiva. Estos son divididos en grupos, dependiendo de cuál es la cualidad que pretenden mejorar como su objetivo principal: transparencia, justificación, controlabilidad, etc.
